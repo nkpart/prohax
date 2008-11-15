@@ -5,3 +5,4 @@ module Prohax
 end
 
 require 'prohax/let_in'
+require 'prohax/either'
