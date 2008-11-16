@@ -7,3 +7,4 @@ end
 require 'prohax/let_in'
 require 'prohax/either'
 require 'prohax/box'
+require 'prohax/strucked'
