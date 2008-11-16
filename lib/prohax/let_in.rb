@@ -1,3 +1,5 @@
+require 'prohax/strucked'
+
 class Container
   def initialize defines
     defines.each do |key, value|
@@ -14,11 +16,7 @@ class Container
   end
 end
   
-class LetProxy
-  def initialize defines
-    @defines = defines
-  end
-
+class LetProxy < Strucked.new(:defines)
   def in &blk
     Container.new(@defines).instance_eval &blk
   end

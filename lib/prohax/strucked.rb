@@ -10,7 +10,7 @@ class Strucked
         end
         @@fields.zip(values).each do |fld, value|
           self.instance_variable_set("@#{fld}", value)
-        end 
+        end
       end
     }
     cls
