@@ -15,17 +15,17 @@ Just some hax that I use.
 
 * Strucked - a class builder, that just instantiates instance vars
   
-  > # before
-  > class Foo
-  >  def initialize a, b
-  >    @a = a
-  >    @b = b
-  >  end
-  > end
+  # before
+  class Foo
+    def initialize a, b
+      @a = a
+      @b = b
+    end
+  end
   
-  > # after
-  > class Foo < Strucked.build(:a, :b)
-  > end
+  # after
+  class Foo < Strucked.build(:a, :b)
+  end
   
 * Kernel#either - a kind of either-like thing.
 
