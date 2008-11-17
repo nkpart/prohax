@@ -1,26 +1,49 @@
 = prohax
 
-* FIX (url)
+* http://github.com/nkpart/prohax
 
-== DESCRIPTION:
+== What?
 
-FIX (describe your package)
+Just some hax that I use.
 
-== FEATURES/PROBLEMS:
+== Contents
 
-* FIX (list of features or problems)
+* Let-in - a neat syntax that's a bit like haskell. Contents of the hash supplied to `let()`
+  are defined as functions on a container, on which the block passed to `in` is instance_eval'd with.
+
+ let( :awesome => proc { |n| "#{n} is awesome." }).in { [1,2,3].map { |e|  awesome(e) }
+
+* Strucked - a class builder, that just instantiates instance vars
+  
+  # before
+  class Foo
+    def initialize a, b
+      @a = a
+      @b = b
+    end
+  end
+  
+  # after
+  class Foo < Strucked.build(:a, :b)
+  end
+  
+* Kernel#either - a kind of either-like thing.
+
+  # If no exceptions are throw, `failure` will be nil and `success` will be the result of the block.
+  # Otherwise, success will be nil and failure will hold the exception
+  success, failure = either {
+    raise "fail"
+  }
+  failure # <= RuntimeError('fail')
+  
+  success, failure = either { 5 }
+  success # <= 5
+  
+
 
 == SYNOPSIS:
 
   FIX (code sample of usage)
-
-== REQUIREMENTS:
-
-* FIX (list of requirements)
-
-== INSTALL:
-
-* FIX (sudo gem install, anything else)
 
 == LICENSE:
 
