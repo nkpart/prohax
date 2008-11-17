@@ -15,6 +15,6 @@ describe Strucked do
   it "does not create accessors" do
     proc { Strucked.new(:foo).new(5).foo }.should raise_error
   end
-  
+
 end
 

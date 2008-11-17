@@ -3,7 +3,7 @@ require File.dirname(__FILE__) + '/spec_helper.rb'
 describe "the either function" do
   it "should be [nil, exception] in case of failure" do
     f = ArgumentError.new "fail"
-    left, right = either { raise f  }
+    left, right = either { raise f }
     left.should be_nil
     right.should == f
   end

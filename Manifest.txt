@@ -3,15 +3,11 @@ Manifest.txt
 PostInstall.txt
 README.rdoc
 Rakefile
-coverage/index.html
-coverage/lib-prohax-box_rb.html
-coverage/lib-prohax-either_rb.html
-coverage/lib-prohax-let_in_rb.html
-coverage/lib-prohax_rb.html
 lib/prohax.rb
 lib/prohax/box.rb
 lib/prohax/either.rb
 lib/prohax/let_in.rb
+lib/prohax/strucked.rb
 script/console
 script/destroy
 script/generate
@@ -20,4 +16,5 @@ spec/either_spec.rb
 spec/let_in_syntax_spec.rb
 spec/spec.opts
 spec/spec_helper.rb
+spec/strucked_spec.rb
 tasks/rspec.rake
