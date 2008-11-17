@@ -1,19 +1,21 @@
 
 class Strucked
-  def self.new *fields
+  def self.build *fields
     cls = Class.new
-    cls.class_eval {
-      @@fields = fields
-
+    cls.class_eval <<EOS
+      def self.fields
+        #{fields.inspect}
+      end
+      
       def initialize *values
-        if @@fields.size != values.size
-          raise ArgumentError.new("Wrong number of arguments, expected #{@@fields.size} got #{values.size}")
+        if self.class.fields.size != values.size
+          raise ArgumentError.new("Wrong number of arguments, expected \#\{self.class.fields.size\} got \#\{values.size\}")
         end
-        @@fields.zip(values).each do |fld, value|
-          self.instance_variable_set("@#{fld}", value)
+        self.class.fields.zip(values).each do |fld, value|
+          self.instance_variable_set("@\#\{fld\}", value)
         end
       end
-    }
+EOS
     cls
   end
 end

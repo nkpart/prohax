@@ -16,7 +16,10 @@ class Container
   end
 end
   
-class LetProxy < Strucked.new(:defines)
+class LetProxy < Strucked.build(:defines)
+  # def initialize defines
+  #   @defines = defines
+  # end
   def in &blk
     Container.new(@defines).instance_eval &blk
   end
