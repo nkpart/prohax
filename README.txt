@@ -29,7 +29,7 @@ Just some hax that I use.
   
 * Kernel#either - a kind of either-like thing.
 
-  # If no exceptions are throw, `failure` will be nil and `success` will be the result of the block.
+  # If no exceptions are thrown, `failure` will be nil and `success` will be the result of the block.
   # Otherwise, success will be nil and failure will hold the exception
   success, failure = either {
     raise "fail"
