@@ -9,8 +9,8 @@ Gem::Specification.new do |s|
   s.date = %q{2008-11-18}
   s.description = %q{}
   s.email = ["nkpart@gmail.com"]
-  s.extra_rdoc_files = ["History.txt", "Manifest.txt", "PostInstall.txt", "README.rdoc"]
-  s.files = ["History.txt", "Manifest.txt", "PostInstall.txt", "README.rdoc", "Rakefile", "coverage/index.html", "coverage/lib-prohax-box_rb.html", "coverage/lib-prohax-either_rb.html", "coverage/lib-prohax-let_in_rb.html", "coverage/lib-prohax-strucked_rb.html", "coverage/lib-prohax_rb.html", "lib/prohax.rb", "lib/prohax/box.rb", "lib/prohax/either.rb", "lib/prohax/let_in.rb", "lib/prohax/strucked.rb", "script/console", "script/destroy", "script/generate", "spec/box_spec.rb", "spec/either_spec.rb", "spec/let_in_syntax_spec.rb", "spec/spec.opts", "spec/spec_helper.rb", "spec/strucked_spec.rb", "tasks/rspec.rake", "test_gem.sh"]
+  s.extra_rdoc_files = ["History.txt", "Manifest.txt", "PostInstall.txt", "README.txt"]
+  s.files = ["History.txt", "Manifest.txt", "PostInstall.txt", "README.txt", "Rakefile", "coverage/index.html", "coverage/lib-prohax-box_rb.html", "coverage/lib-prohax-either_rb.html", "coverage/lib-prohax-let_in_rb.html", "coverage/lib-prohax-strucked_rb.html", "coverage/lib-prohax_rb.html", "lib/prohax.rb", "lib/prohax/box.rb", "lib/prohax/either.rb", "lib/prohax/let_in.rb", "lib/prohax/strucked.rb", "prohax.gemspec", "script/console", "script/destroy", "script/generate", "spec/box_spec.rb", "spec/either_spec.rb", "spec/let_in_syntax_spec.rb", "spec/spec.opts", "spec/spec_helper.rb", "spec/strucked_spec.rb", "tasks/rspec.rake", "test_gem.sh"]
   s.has_rdoc = true
   s.homepage = %q{http://github.com/nkpart/prohax}
   s.rdoc_options = ["--main", "README.txt"]

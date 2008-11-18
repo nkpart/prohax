@@ -1,7 +1,7 @@
 History.txt
 Manifest.txt
 PostInstall.txt
-README.rdoc
+README.txt
 Rakefile
 coverage/index.html
 coverage/lib-prohax-box_rb.html
@@ -14,6 +14,7 @@ lib/prohax/box.rb
 lib/prohax/either.rb
 lib/prohax/let_in.rb
 lib/prohax/strucked.rb
+prohax.gemspec
 script/console
 script/destroy
 script/generate
