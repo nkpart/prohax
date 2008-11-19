@@ -29,6 +29,14 @@ describe Strucked do
   it "does not create accessors" do
     proc { Strucked.new(:foo).new(5).foo }.should raise_error
   end
+  
+  it "should provide equality" do
+    f = Strucked.build :a
+    
+    p = f.new 5
+    q = f.new 5
+    p.should == q
+  end
 
 end
 

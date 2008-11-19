@@ -2,7 +2,11 @@ require File.dirname(__FILE__) + '/spec_helper.rb'
 
 describe "The let().in {} syntax" do
   it "should be let-like and in-ish" do
-    let(:foo => 5 ).in { foo }.should == 5
+    let(
+      :foo => 5 
+    ).in { 
+      foo 
+    }.should == 5
   end
 
   it "should be mad" do

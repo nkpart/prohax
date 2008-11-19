@@ -15,6 +15,12 @@ class Strucked
           self.instance_variable_set("@\#\{fld\}", value)
         end
       end
+      
+      def == other
+        self.class.fields.inject(true) do |memo, f|
+          memo && (self.instance_variable_get("@\#\{f\}") == other.instance_variable_get("@\#\{f\}"))
+        end
+      end
 EOS
     cls
   end
