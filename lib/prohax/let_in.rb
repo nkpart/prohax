@@ -14,19 +14,12 @@ class Container
       end
     end
   end
-end
   
-class LetProxy < Strucked.build(:defines)
-  # def initialize defines
-  #   @defines = defines
-  # end
-  def in &blk
-    Container.new(@defines).instance_eval &blk
-  end
+  alias :in :instance_eval
 end
 
 module Kernel    
   def let defines
-    LetProxy.new(defines)
+    Container.new(defines)
   end
 end
