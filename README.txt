@@ -12,6 +12,14 @@ Just some hax that I use.
   are defined as functions on a container, on which the block passed to `in` is instance_eval'd with.
 
  let( :awesome => proc { |n| "#{n} is awesome." }).in { [1,2,3].map { |e|  awesome(e) }
+ 
+ It can also be used to create mini dsl things like this:
+ 
+ def add a
+   let(:to => proc { |b| b + a })
+ end
+
+ add(5).to(3) # <= 8  
 
 * Strucked - a class builder, that just instantiates instance vars
   
@@ -26,6 +34,12 @@ Just some hax that I use.
   # after
   class Foo < Strucked.build(:a, :b)
   end
+  
+  # with readers
+  class Foo < Strucked.build(:a, :b).with_readers
+  end
+  
+  Foo.new(5, 10).a # <= 5
   
 * Kernel#either - a kind of either-like thing.
 
