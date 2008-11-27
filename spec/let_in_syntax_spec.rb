@@ -20,4 +20,11 @@ describe "The let().in {} syntax" do
       plus(x, times(five, plus(1, fast_five)))
     }.should == 35
   end
+  
+  it "should have separate scopes" do
+    let(:three => 3).in { three }.should == 3
+    proc {
+      let(:five => 5).in { three }
+    }.should raise_error
+  end
 end

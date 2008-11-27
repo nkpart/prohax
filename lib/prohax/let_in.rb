@@ -1,14 +1,20 @@
 require 'prohax/strucked'
 
-class Container
+class LetInContainer
+  def metaclass
+    class <<self
+      self
+    end
+  end
+  
   def initialize defines
     defines.each do |key, value|
       if value.respond_to? :call then
-        self.class.class_eval {
+        self.metaclass.class_eval {
           define_method(key) { |*args| value.call *args }
         }
       else
-        self.class.class_eval {
+        self.metaclass.class_eval {
           define_method(key) { value }
         }
       end
@@ -20,6 +26,6 @@ end
 
 module Kernel    
   def let defines
-    Container.new(defines)
+    LetInContainer.new(defines)
   end
 end
