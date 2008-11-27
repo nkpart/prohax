@@ -11,16 +11,17 @@ Just some hax that I use.
 * Let-in - a neat syntax that's a bit like haskell. Contents of the hash supplied to `let()`
   are defined as functions on a container, on which the block passed to `in` is instance_eval'd with.
 
- let( :awesome => proc { |n| "#{n} is awesome." }).in { [1,2,3].map { |e|  awesome(e) }
+  let( :awesome => proc { |n| "#{n} is awesome." }).in { [1,2,3].map { |e|  awesome(e) }
  
- It can also be used to create mini dsl things like this:
+  It can also be used to create mini dsl things like this:
  
- def add a
-   let(:to => proc { |b| b + a })
- end
+  def add a
+    let(:to => proc { |b| b + a })
+  end
 
- add(5).to(3) # <= 8  
-
+  add(5).to(3) # <= 8  
+  
+  
 * Strucked - a class builder, that just instantiates instance vars
   
   # before
@@ -53,12 +54,6 @@ Just some hax that I use.
   success, failure = either { 5 }
   success # <= 5
   
-
-
-== SYNOPSIS:
-
-  FIX (code sample of usage)
-
 == LICENSE:
 
 (The MIT License)

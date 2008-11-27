@@ -1,12 +1,6 @@
-require 'prohax/strucked'
+require 'prohax/metaclass'
 
 class LetInContainer
-  def metaclass
-    class <<self
-      self
-    end
-  end
-  
   def initialize defines
     defines.each do |key, value|
       if value.respond_to? :call then
