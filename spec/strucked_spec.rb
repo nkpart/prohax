@@ -37,6 +37,10 @@ describe Strucked do
     q = f.new 5
     p.should == q
   end
-
+  
+  it "should have a chainable with_readers method" do
+    c = Strucked.build(:a).with_readers
+    c.new(5).a.should == 5
+  end
 end
 
